@@ -29,11 +29,29 @@ function displayCurrentWeather(city) {
 
 		$(this).text(response.name);
 
+		// var cityName1 = response.name;
+		// console.log(cityName1);
+
+		var icon = response.weather[0].icon;
+		console.log('icon ' + icon);
+		var iconURL = 'http://openweathermap.org/img/wn/' + icon + '@2x.png';
+		console.log(iconURL);
+
 		// Create CODE HERE to calculate the temperature (converted from Kelvin)
 		var tempK = response.main.temp;
 		// Hint: To convert from Kelvin to Fahrenheit: F = (K - 273.15) * 1.80 + 32
 		var tempF = ((tempK - 273.15) * 1.8 + 32).toFixed(1);
 		console.log(tempF);
+		// current Date
+		var currentDate = moment().format('MM/DD/YYYY');
+		console.log(currentDate);
+
+		// // display city Name
+		// $('.city').text(cityName1);
+		// // display current date
+		$('.currentDate').text(currentDate);
+		// // display weather icon
+		$('.icon').html("<img src='" + iconURL + "'>");
 		// Create CODE HERE to dump the temperature content into HTML
 		$('.temperature').text('Temperature: ' + tempF + ' F');
 		// retrieves the humidity
@@ -84,13 +102,206 @@ function DisplayFiveDayForecast(city) {
 		console.log('responseFiveDay', responseFiveDay);
 		// creates a div to hold the data
 		var fiveDayForecastDiv = $('<div>');
+		fiveDayForecastDiv.addClass('fiveDay');
 		$('#fiveDay-Forecast').append(fiveDayForecastDiv);
 
-		// grab response date
-		// grab icon
-		// grab response for temp
+		// grab response date & display
+		var currentDate = moment().format('MM/DD/YYYY');
+		console.log(currentDate);
+		$('.date1').text(currentDate);
+
+		// grab icon for 12pm & display
+		var icon1 = responseFiveDay.list[3].weather[0].icon;
+		$('.weather-icon1').text(icon1);
+
+		// grab response for temp Day 1
+		// average temp between 3 responses (6am, 9am, 12pm, 3pm, 6pm)
+		var temperatures = [];
+		for (i = 0; i < 5; i++) {
+			var tempK = responseFiveDay.list[i].main.temp;
+			temperatures.push(parseInt(((tempK - 273.15) * 1.8 + 32).toFixed(1)));
+		}
+
+		console.log('temp arrary: ' + temperatures);
+		var averageTemp =
+			(temperatures[0] +
+				temperatures[1] +
+				temperatures[2] +
+				temperatures[3] +
+				temperatures[4]) /
+			5;
+
+		var humidity = [];
+		for (i = 0; i < 5; i++) {
+			var humid = responseFiveDay.list[i].main.humidity;
+			humidity.push(parseInt(humid));
+		}
+		console.log('humidity array: ' + humidity);
+		var averageHumidity =
+			(humidity[0] + humidity[1] + humidity[2] + humidity[3] + humidity[4]) / 5;
+
+		// display average temp1
+		$('.avg1').text('Temp: ' + averageTemp);
+		$('.AVGhumidity1').text('Humidity: ' + averageHumidity);
+
+		console.log('average humidity: ' + averageHumidity);
+		console.log('average temp: ' + averageTemp);
+
+		// average temp day 2
+		var date2 = moment()
+			.add(1, 'days')
+			.format('MM/DD/YYYY');
+		console.log('date2: ' + date2);
+		$('.date2').text(date2);
+
+		// grab icon for 12pm & display
+		var icon2 = responseFiveDay.list[3].weather[0].icon;
+		$('.weather-icon2').text(icon2);
+
+		var temperatures2 = [];
+		for (i = 8; i < 13; i++) {
+			var tempK2 = responseFiveDay.list[i].main.temp;
+			temperatures2.push(parseInt(((tempK2 - 273.15) * 1.8 + 32).toFixed(1)));
+		}
+
+		console.log('temp array: ' + temperatures2);
+		var averageTemp2 =
+			(temperatures2[0] +
+				temperatures2[1] +
+				temperatures2[2] +
+				temperatures2[3] +
+				temperatures2[4]) /
+			5;
+
+		var humidity2 = [];
+		for (i = 8; i < 13; i++) {
+			var humid2 = responseFiveDay.list[i].main.humidity;
+			humidity2.push(parseInt(humid2));
+		}
+		console.log('humidity array: ' + humidity2);
+		var averageHumidity2 =
+			(humidity2[0] +
+				humidity2[1] +
+				humidity2[2] +
+				humidity2[3] +
+				humidity2[4]) /
+			5;
+		// display average temp 2
+		$('.avg2').text('Temp: ' + averageTemp2);
+		$('.AVGhumidity2').text('Humidity: ' + averageHumidity2);
+
+		console.log('average humidity: ' + averageHumidity2);
+		console.log('average temp: ' + averageTemp2);
+
+		// average temp Day 3
+		var temperatures3 = [];
+		for (i = 16; i < 21; i++) {
+			var tempK3 = responseFiveDay.list[i].main.temp;
+			temperatures3.push(parseInt(((tempK3 - 273.15) * 1.8 + 32).toFixed(1)));
+		}
+
+		console.log(temperatures3);
+		var averageTemp3 =
+			(temperatures3[0] +
+				temperatures3[1] +
+				temperatures3[2] +
+				temperatures3[3] +
+				temperatures3[4]) /
+			5;
+
+		var humidity3 = [];
+		for (i = 16; i < 21; i++) {
+			var humid3 = responseFiveDay.list[i].main.humidity;
+			humidity3.push(parseInt(humid3));
+		}
+		console.log('humidity array: ' + humidity3);
+		var averageHumidity3 =
+			(humidity3[0] +
+				humidity3[1] +
+				humidity3[2] +
+				humidity3[3] +
+				humidity3[4]) /
+			5;
+
+		// display average temp 3
+		$('.avg3').text('Temp: ' + averageTemp3);
+		$('.AVGhumidity3').text('Humidity: ' + averageHumidity3);
+
+		console.log('average humidity: ' + averageHumidity3);
+		console.log('average temp: ' + averageTemp3);
+
+		// avearge temp Day 4
+		var temperatures4 = [];
+		for (i = 24; i < 29; i++) {
+			var tempK4 = responseFiveDay.list[i].main.temp;
+			temperatures4.push(parseInt(((tempK4 - 273.15) * 1.8 + 32).toFixed(1)));
+		}
+
+		console.log(temperatures4);
+		var averageTemp4 =
+			(temperatures4[0] +
+				temperatures4[1] +
+				temperatures4[2] +
+				temperatures4[3] +
+				temperatures4[4]) /
+			5;
+
+		var humidity4 = [];
+		for (i = 24; i < 29; i++) {
+			var humid4 = responseFiveDay.list[i].main.humidity;
+			humidity4.push(parseInt(humid4));
+		}
+		console.log('humidity array: ' + humidity4);
+		var averageHumidity4 =
+			(humidity4[0] +
+				humidity4[1] +
+				humidity4[2] +
+				humidity4[3] +
+				humidity4[4]) /
+			5;
+		// display average temp 4
+		$('.avg4').text('Temp: ' + averageTemp4);
+		$('.AVGhumidity4').text('Humidity: ' + averageHumidity4);
+
+		console.log('average humidity: ' + averageHumidity4);
+		console.log('average temp: ' + averageTemp4);
+
+		// average temp Day 5
+		var temperatures5 = [];
+		for (i = 32; i < 37; i++) {
+			var tempK5 = responseFiveDay.list[i].main.temp;
+			temperatures5.push(parseInt(((tempK5 - 273.15) * 1.8 + 32).toFixed(1)));
+		}
+
+		console.log(temperatures5);
+		var averageTemp5 =
+			(temperatures5[0] +
+				temperatures5[1] +
+				temperatures5[2] +
+				temperatures5[3] +
+				temperatures5[4]) /
+			5;
+
+		var humidity5 = [];
+		for (i = 32; i < 37; i++) {
+			var humid5 = responseFiveDay.list[i].main.humidity;
+			humidity5.push(parseInt(humid5));
+		}
+		console.log('humidity array: ' + humidity5);
+		var averageHumidity5 =
+			(humidity5[0] +
+				humidity5[1] +
+				humidity5[2] +
+				humidity5[3] +
+				humidity5[4]) /
+			5;
+		// display average temp day 5
+		$('.avg5').text('Temp: ' + averageTemp5);
+		$('.AVGhumidity5').text('Humidity: ' + averageHumidity5);
+
+		console.log('average humidity: ' + averageHumidity5);
+		console.log('average temp: ' + averageTemp5);
 		// grab response for humidity
-		// average temp and humidity between 3 responses
 		// append average to html
 	});
 }

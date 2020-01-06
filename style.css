@@ -1,0 +1,24 @@
+/* #day1 {
+	float: right;
+	margin: 10px;
+}
+#day2 {
+	float: right;
+	margin: 10px;
+}
+#day3 {
+	float: right;
+	margin: 10px;
+}
+#day4 {
+	float: right;
+	margin: 10px;
+}
+#day5 {
+	float: right;
+	margin: 10px;
+} */
+.fiveDay {
+	margin: 10px;
+	float: right;
+}

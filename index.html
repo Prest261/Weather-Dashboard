@@ -20,30 +20,62 @@
             <h1>Weather Dashboard</h1>
         </div>
 
-        <div class="col-md-4">
-            <h2>Search for a City:</h2>
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" aria-describedby="button-addon2" id="cityInput">
-                <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button" id="searchBtn">Search</button>
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Search for a City:</h2>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" aria-describedby="button-addon2" id="cityInput">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="searchBtn">Search</button>
+                    </div>
+                </div>
+                <div id="city-buttons"></div>
+            </div>
+            <div class="col-md-8">
+                <div id="current-conditions">
+                    <div class="city"></div>
+                    <div class="currentDate"></div>
+                    <div class="icon"></div>
+                    <div class="temperature"></div>
+                    <div class="humidity"></div>
+                    <div class="windSpeed"></div>
+                    <div class="UVindex"></div>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div id="city-buttons"></div>
+        <div class="col-md" id="fiveDay-Forecast">
+
+            <div id="day1"></div>
+            <div class="date1"></div>
+            <div class="weather-icon1"></div>
+            <div class=avg1></div>
+            <div Class="AVGhumidity1"></div>
+
+            <div id="day2"></div>
+            <div class="date2"></div>
+            <div class="weather-icon2"></div>
+            <div class=avg2></div>
+            <div Class="AVGhumidity2"></div>
+
+            <div id="day3"></div>
+            <div class="date3"></div>
+            <div class="weather-icon3"></div>
+            <div class=avg3></div>
+            <div Class="AVGhumidity3"></div>
+
+            <div id="day4"></div>
+            <div class="date4"></div>
+            <div class="weather-icon4"></div>
+            <div class=avg4></div>
+            <div Class="AVGhumidity4"></div>
+
+            <div id="day5"></div>
+            <div class="date5"></div>
+            <div class="weather-icon5"></div>
+            <div class=avg5></div>
+            <div Class="AVGhumidity5"></div>
         </div>
-        <div class="col-md-8">
-            <div id="current-conditions">
-                <div class="city"></div>
-                <div class="temperature"></div>
-                <div class="humidity"></div>
-                <div class="windSpeed"></div>
-                <div class="UVindex"></div>
-            </div>
-        </div>
-        <div class="col-md-8">
-            <div id="fiveDay-Forecast"></div>
-        </div>
+    </div>
 
     </div>
 
@@ -57,6 +89,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./javascript.js"></script>
 </body>
 
