@@ -105,10 +105,12 @@ function DisplayFiveDayForecast(city) {
 		fiveDayForecastDiv.addClass('fiveDay');
 		$('#fiveDay-Forecast').append(fiveDayForecastDiv);
 
-		// grab response date & display
-		var currentDate = moment().format('MM/DD/YYYY');
-		console.log(currentDate);
-		$('.date1').text(currentDate);
+		// use moment js to add 1 day to current date
+		var date1 = moment()
+			.add(1, 'days')
+			.format('MM/DD/YYYY');
+		console.log('date1: ' + date1);
+		$('.date1').text(date1);
 
 		// grab icon for 12pm & display
 		var icon1 = responseFiveDay.list[4].weather[0].icon;
@@ -151,8 +153,9 @@ function DisplayFiveDayForecast(city) {
 		console.log('average temp: ' + averageTemp);
 
 		// average temp day 2
+		// use moment js to add 2 days to current date
 		var date2 = moment()
-			.add(1, 'days')
+			.add(2, 'days')
 			.format('MM/DD/YYYY');
 		console.log('date2: ' + date2);
 		$('.date2').text(date2);
@@ -200,6 +203,14 @@ function DisplayFiveDayForecast(city) {
 		console.log('average temp: ' + averageTemp2);
 
 		// average temp Day 3
+		// use moment js to add 2 days to current date
+		var date3 = moment()
+			.add(3, 'days')
+			.format('MM/DD/YYYY');
+		console.log('date3: ' + date3);
+		$('.date3').text(date3);
+
+		// display icon day 3
 		var icon3 = responseFiveDay.list[20].weather[0].icon;
 		console.log('icon ' + icon3);
 		var iconURL3 = 'http://openweathermap.org/img/wn/' + icon3 + '@2x.png';
@@ -243,6 +254,14 @@ function DisplayFiveDayForecast(city) {
 		console.log('average temp: ' + averageTemp3);
 
 		// avearge temp Day 4
+		// use moment js to add 4 days to current date
+		var date4 = moment()
+			.add(4, 'days')
+			.format('MM/DD/YYYY');
+		console.log('date4: ' + date4);
+		$('.date4').text(date4);
+
+		// display icon for day 4
 		var icon4 = responseFiveDay.list[28].weather[0].icon;
 		console.log('icon ' + icon4);
 		var iconURL4 = 'http://openweathermap.org/img/wn/' + icon4 + '@2x.png';
@@ -285,6 +304,14 @@ function DisplayFiveDayForecast(city) {
 		console.log('average temp: ' + averageTemp4);
 
 		// average temp Day 5
+		// use moment js to add 5 days to current date
+		var date5 = moment()
+			.add(5, 'days')
+			.format('MM/DD/YYYY');
+		console.log('date5: ' + date5);
+		$('.date5').text(date5);
+
+		// display icon for day 5
 		var icon5 = responseFiveDay.list[36].weather[0].icon;
 		console.log('icon ' + icon5);
 		var iconURL5 = 'http://openweathermap.org/img/wn/' + icon5 + '@2x.png';
