@@ -21,7 +21,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-3" id="searchHeader">
                 <h2>Search for a City:</h2>
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" aria-describedby="button-addon2" id="cityInput">
@@ -31,49 +31,63 @@
                 </div>
                 <div id="city-buttons"></div>
             </div>
+
             <div class="col-md-8">
-                <div id="current-conditions">
-                    <div class="city"></div>
-                    <div class="currentDate"></div>
-                    <div class="icon"></div>
-                    <div class="temperature"></div>
-                    <div class="humidity"></div>
-                    <div class="windSpeed"></div>
-                    <div class="UVindex"></div>
+                <div class="row">
+                    <div id="current-conditions">
+                        <div class="city"></div>
+                        <div class="currentDate"></div>
+                        <div class="icon"></div>
+                        <div class="temperature"></div>
+                        <div class="humidity"></div>
+                        <div class="windSpeed"></div>
+                        <div class="UVindex"></div>
+                    </div>
+                </div>
+                <div class="row" id="fiveDay-Forecast">
+                    <div class="col-md-2">
+                        <div id="day1">
+                            <div class="date1"></div>
+                            <div class="weather-icon1"></div>
+                            <div class=avg1></div>
+                            <div Class="AVGhumidity1"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div id="day2">
+                            <div class="date2"></div>
+                            <div class="weather-icon2"></div>
+                            <div class=avg2></div>
+                            <div Class="AVGhumidity2"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div id="day3">
+                            <div class="date3"></div>
+                            <div class="weather-icon3"></div>
+                            <div class=avg3></div>
+                            <div Class="AVGhumidity3"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div id="day4">
+                            <div class="date4"></div>
+                            <div class="weather-icon4"></div>
+                            <div class=avg4></div>
+                            <div Class="AVGhumidity4"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div id="day5">
+                            <div class="date5"></div>
+                            <div class="weather-icon5"></div>
+                            <div class=avg5></div>
+                            <div Class="AVGhumidity5"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md" id="fiveDay-Forecast">
 
-            <div id="day1"></div>
-            <div class="date1"></div>
-            <div class="weather-icon1"></div>
-            <div class=avg1></div>
-            <div Class="AVGhumidity1"></div>
-
-            <div id="day2"></div>
-            <div class="date2"></div>
-            <div class="weather-icon2"></div>
-            <div class=avg2></div>
-            <div Class="AVGhumidity2"></div>
-
-            <div id="day3"></div>
-            <div class="date3"></div>
-            <div class="weather-icon3"></div>
-            <div class=avg3></div>
-            <div Class="AVGhumidity3"></div>
-
-            <div id="day4"></div>
-            <div class="date4"></div>
-            <div class="weather-icon4"></div>
-            <div class=avg4></div>
-            <div Class="AVGhumidity4"></div>
-
-            <div id="day5"></div>
-            <div class="date5"></div>
-            <div class="weather-icon5"></div>
-            <div class=avg5></div>
-            <div Class="AVGhumidity5"></div>
         </div>
     </div>
 

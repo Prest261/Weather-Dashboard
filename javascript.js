@@ -391,7 +391,7 @@ function renderButtons() {
 		// This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
 		var a = $('<button>');
 		// Adds a class of city to our button
-		a.addClass('city');
+		a.addClass('city btn btn-secondary btn-lg btn-block');
 		// Added a data-attribute
 		a.attr('data-name', citiesArr[i]);
 		// Provided the initial button text

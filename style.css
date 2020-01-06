@@ -1,24 +1,26 @@
-/* #day1 {
-	float: right;
-	margin: 10px;
+#header {
+	margin: 0 auto;
+	background-color: black;
+	color: white;
+	padding: 15px;
+	text-align: center;
 }
-#day2 {
-	float: right;
-	margin: 10px;
+#searchHeader {
+	margin: 25px;
+	box-sizing: border-box;
 }
-#day3 {
-	float: right;
-	margin: 10px;
-}
-#day4 {
-	float: right;
-	margin: 10px;
-}
-#day5 {
-	float: right;
-	margin: 10px;
-} */
 .fiveDay {
 	margin: 10px;
 	float: right;
+	box-sizing: border-box;
+}
+#current-conditions {
+	margin: 50px;
+	box-sizing: border-box;
+}
+#fiveDay-Forecast {
+	margin: 20px;
+}
+.current {
+	border: 2px solid black;
 }
