@@ -111,8 +111,11 @@ function DisplayFiveDayForecast(city) {
 		$('.date1').text(currentDate);
 
 		// grab icon for 12pm & display
-		var icon1 = responseFiveDay.list[3].weather[0].icon;
-		$('.weather-icon1').text(icon1);
+		var icon1 = responseFiveDay.list[4].weather[0].icon;
+		console.log('icon ' + icon1);
+		var iconURL1 = 'http://openweathermap.org/img/wn/' + icon1 + '@2x.png';
+		console.log(iconURL1);
+		$('.weather-icon1').html("<img src='" + iconURL1 + "'>");
 
 		// grab response for temp Day 1
 		// average temp between 3 responses (6am, 9am, 12pm, 3pm, 6pm)
@@ -155,8 +158,11 @@ function DisplayFiveDayForecast(city) {
 		$('.date2').text(date2);
 
 		// grab icon for 12pm & display
-		var icon2 = responseFiveDay.list[3].weather[0].icon;
-		$('.weather-icon2').text(icon2);
+		var icon2 = responseFiveDay.list[12].weather[0].icon;
+		console.log('icon ' + icon2);
+		var iconURL2 = 'http://openweathermap.org/img/wn/' + icon2 + '@2x.png';
+		console.log(iconURL2);
+		$('.weather-icon2').html("<img src='" + iconURL2 + "'>");
 
 		var temperatures2 = [];
 		for (i = 8; i < 13; i++) {
@@ -194,6 +200,12 @@ function DisplayFiveDayForecast(city) {
 		console.log('average temp: ' + averageTemp2);
 
 		// average temp Day 3
+		var icon3 = responseFiveDay.list[20].weather[0].icon;
+		console.log('icon ' + icon3);
+		var iconURL3 = 'http://openweathermap.org/img/wn/' + icon3 + '@2x.png';
+		console.log(iconURL3);
+		$('.weather-icon3').html("<img src='" + iconURL3 + "'>");
+
 		var temperatures3 = [];
 		for (i = 16; i < 21; i++) {
 			var tempK3 = responseFiveDay.list[i].main.temp;
@@ -231,6 +243,12 @@ function DisplayFiveDayForecast(city) {
 		console.log('average temp: ' + averageTemp3);
 
 		// avearge temp Day 4
+		var icon4 = responseFiveDay.list[28].weather[0].icon;
+		console.log('icon ' + icon4);
+		var iconURL4 = 'http://openweathermap.org/img/wn/' + icon4 + '@2x.png';
+		console.log(iconURL4);
+		$('.weather-icon4').html("<img src='" + iconURL4 + "'>");
+
 		var temperatures4 = [];
 		for (i = 24; i < 29; i++) {
 			var tempK4 = responseFiveDay.list[i].main.temp;
@@ -267,6 +285,12 @@ function DisplayFiveDayForecast(city) {
 		console.log('average temp: ' + averageTemp4);
 
 		// average temp Day 5
+		var icon5 = responseFiveDay.list[36].weather[0].icon;
+		console.log('icon ' + icon5);
+		var iconURL5 = 'http://openweathermap.org/img/wn/' + icon5 + '@2x.png';
+		console.log(iconURL5);
+		$('.weather-icon5').html("<img src='" + iconURL5 + "'>");
+
 		var temperatures5 = [];
 		for (i = 32; i < 37; i++) {
 			var tempK5 = responseFiveDay.list[i].main.temp;
