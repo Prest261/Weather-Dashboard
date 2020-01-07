@@ -1,4 +1,5 @@
 var citiesArr = [];
+var citiesLocal = JSON.parse(localStorage.getItem('cities'));
 // displayCurrentWeather function re-renders the HTML to display the appropriate content
 function displayCurrentWeather(city) {
 	//   var city = $("#cityInput").val();
@@ -15,6 +16,7 @@ function displayCurrentWeather(city) {
 		url: queryURL,
 		method: 'GET'
 	}).then(function(response) {
+		localStorage.setItem('cities', JSON.stringify(citiesLocal));
 		// creates a div to hold the data
 		var currentWeatherDiv = $('<div>');
 		$('#current-conditions').append(currentWeatherDiv);
@@ -29,8 +31,8 @@ function displayCurrentWeather(city) {
 
 		$(this).text(response.name);
 
-		// var cityName1 = response.name;
-		// console.log(cityName1);
+		var cityName1 = response.name;
+		console.log(cityName1);
 
 		var icon = response.weather[0].icon;
 		console.log('icon ' + icon);
@@ -47,7 +49,7 @@ function displayCurrentWeather(city) {
 		console.log(currentDate);
 
 		// // display city Name
-		// $('.city').text(cityName1);
+		$('.city1').text(cityName1);
 		// // display current date
 		$('.currentDate').text(currentDate);
 		// // display weather icon
@@ -103,7 +105,13 @@ function DisplayFiveDayForecast(city) {
 		// creates a div to hold the data
 		var fiveDayForecastDiv = $('<div>');
 		fiveDayForecastDiv.addClass('fiveDay');
+		$('#fiveDay-Forecast').show();
 		$('#fiveDay-Forecast').append(fiveDayForecastDiv);
+		$('#day1').attr('style', 'padding:10px; border-radius:5px');
+		$('#day2').attr('style', 'padding:10px; border-radius:5px');
+		$('#day3').attr('style', 'padding:10px; border-radius:5px');
+		$('#day4').attr('style', 'padding:10px; border-radius:5px');
+		$('#day5').attr('style', 'padding:10px; border-radius:5px');
 
 		// use moment js to add 1 day to current date
 		var date1 = moment()
@@ -365,15 +373,15 @@ $('#searchBtn').on('click', function(event) {
 		.val()
 		.trim();
 	displayCurrentWeather(citySearch);
-
 	// The movie from the textbox is then added to our array
 	citiesArr.push(citySearch);
 
 	// Calling renderButtons which handles the processing of our city array
 	renderButtons();
 });
+
 // Adding click event listeners to all elements with a class of "city"
-$(document).on('click', '.city', UVindex);
+$(document).on('click', '.city', displayCurrentWeather);
 
 //   // Calling the renderButtons function to display the initial buttons
 //   renderButtons();

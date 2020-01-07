@@ -11,7 +11,6 @@
 }
 .fiveDay {
 	margin: 10px;
-	float: right;
 	box-sizing: border-box;
 }
 #current-conditions {
@@ -20,7 +19,28 @@
 }
 #fiveDay-Forecast {
 	margin: 20px;
+	display: none;
 }
 .current {
 	border: 2px solid black;
+}
+#day1 {
+	background-color: blue;
+	color: white;
+}
+#day2 {
+	background-color: blue;
+	color: white;
+}
+#day3 {
+	background-color: blue;
+	color: white;
+}
+#day4 {
+	background-color: blue;
+	color: white;
+}
+#day5 {
+	background-color: blue;
+	color: white;
 }
