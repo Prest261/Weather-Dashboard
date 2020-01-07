@@ -4,7 +4,6 @@ var citiesLocal = JSON.parse(localStorage.getItem('cities'));
 function displayCurrentWeather(city) {
 	//   var city = $("#cityInput").val();
 	// <button class="city" data-name="denver">
-	// var city = $(this).attr("data-name");
 
 	var queryURL =
 		'https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/weather?q=' +
@@ -381,7 +380,10 @@ $('#searchBtn').on('click', function(event) {
 });
 
 // Adding click event listeners to all elements with a class of "city"
-$(document).on('click', '.city', displayCurrentWeather);
+$(document).on('click', '.city', function() {
+	var cityData = $(this).attr('data-name');
+	displayCurrentWeather(cityData);
+});
 
 //   // Calling the renderButtons function to display the initial buttons
 //   renderButtons();
@@ -405,7 +407,7 @@ function renderButtons() {
 		// Provided the initial button text
 		a.text(citiesArr[i]);
 		// Added the button to the buttons-view div
-		$('#city-buttons').append(a);
+		$('#city-buttons').prepend(a);
 		console.log('citiesArr[i]:', citiesArr[i]);
 	}
 }
