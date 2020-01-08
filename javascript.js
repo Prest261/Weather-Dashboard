@@ -83,6 +83,37 @@ function UVindex(lat, lon) {
 		// ajax UV index call response.coord.lon.lat
 
 		// retrieves the city + date + icon
+		if (UVresponse.value <= 2) {
+			$('.UVindex').css({
+				'background-color': 'green',
+				'border-radius': '3px',
+				padding: '6px'
+			});
+		} else if (UVresponse.value >= 3 || UVresponse.value <= 5) {
+			$('.UVindex').css({
+				'background-color': 'yellow',
+				'border-radius': '3px',
+				padding: '6px'
+			});
+		} else if (UVresponse.value >= 6 || UVresponse.value <= 7) {
+			$('.UVindex').css({
+				'background-color': 'orange',
+				'border-radius': '3px',
+				padding: '6px'
+			});
+		} else if (UVresponse.value >= 8 || UVresponse.value <= 10) {
+			$('.UVindex').css({
+				'background-color': 'red',
+				'border-radius': '3px',
+				padding: '6px'
+			});
+		} else {
+			$('.UVindex').css({
+				'background-color': 'violet',
+				'border-radius': '3px',
+				padding: '6px'
+			});
+		}
 		// add UV index
 		$('.UVindex').text('UV index: ' + UVresponse.value);
 	});
