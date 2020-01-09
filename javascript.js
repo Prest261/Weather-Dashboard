@@ -15,7 +15,7 @@ function displayCurrentWeather(city) {
 		url: queryURL,
 		method: 'GET'
 	}).then(function(response) {
-		localStorage.setItem('cities', JSON.stringify(citiesLocal));
+		localStorage.setItem('cities', JSON.stringify(citiesArr));
 		// creates a div to hold the data
 		var currentWeatherDiv = $('<div>');
 		$('#current-conditions').append(currentWeatherDiv);
@@ -410,6 +410,17 @@ $('#searchBtn').on('click', function(event) {
 	renderButtons();
 });
 
+function loadLocal() {
+	for (var i = 0; i < citiesLocal.length; i++) {
+		citiesArr.push(citiesLocal[i]);
+		console.log('cities array ', citiesArr);
+	}
+	// 		// The city from the textbox is then added to our array
+	renderButtons();
+
+	// 	// Calling renderButtons which handles the processing of our city array
+}
+
 // Adding click event listeners to all elements with a class of "city"
 $(document).on('click', '.city', function() {
 	var cityData = $(this).attr('data-name');
@@ -443,3 +454,4 @@ function renderButtons() {
 	}
 }
 renderButtons();
+loadLocal();
